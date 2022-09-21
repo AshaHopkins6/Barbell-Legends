@@ -1,6 +1,8 @@
 import React from 'react';
-import {useForm, Resolver} from 'react-hook-form';
-import './App.css';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.css';
+import { useForm, Resolver } from 'react-hook-form';
+import Card from 'react-bootstrap/Card';
 
 type FormValues = {
   username: string;
@@ -14,7 +16,7 @@ const resolver: Resolver<FormValues> = async (values) => {
       ? {
           username: {
             type: 'required',
-            message: 'Enter Username',
+            message: 'Enter Username.',
           },
         }
       : {},
@@ -26,13 +28,20 @@ export default function App() {
   const onSubmit = handleSubmit((data) => console.log(data));
 
   return (
-    <form onSubmit={onSubmit}>
-      <input {...register("username")} placeholder="Username" />
-      {errors?.username && <p>{errors.username.message}</p>}
-      
-      <input {...register("password")} placeholder="Password" />
+    <Card className="text-center">
+      <Card.Header as="h5">Login</Card.Header>
+      <Card.Body>
+        <form onSubmit={onSubmit}>
+          <input {...register("username")} placeholder="Username" />
+          {errors?.username && <p>{errors.username.message}</p>}
+          <br></br>
 
-      <input type="submit" />
-    </form>
+          <input {...register("password")} placeholder="Password" />
+          <br></br>
+
+          <Button variant="primary" type="submit">LOGIN</Button>
+        </form>
+        </Card.Body>
+    </Card>
   );
 }
