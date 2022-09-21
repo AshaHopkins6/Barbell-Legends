@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+import {useForm, Resolver} from 'react-hook-form';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ 
+type FormValues = {
+ username: string;
+ password: string;
+};
+ 
+const resolver: Resolver<FormValues> = async (values) => {
+ return {
+   values: values.username ? values : {},
+   errors: !values.username
+     ? {
+         username: {
+           type: 'required',
+           message: 'Please Enter Username',
+         },
+       }
+     : {},
+ };
+};
+ 
+export default function App() {
+ const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
+ const onSubmit = handleSubmit((data) => console.log(data));
+ 
+ return (
+   <form onSubmit={onSubmit}>
+     <div>
+       <input {...register("username")} placeholder="Username" />
+       {errors?.username && <p>{errors.username.message}</p>}
+     </div>
+     <div>
+       <input {...register("password")} placeholder="Password" />
+     </div>
+     <input type="submit" />
+   </form>
+ );
 }
 
-export default App;
+
+
