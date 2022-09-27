@@ -3,45 +3,19 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useForm, Resolver } from 'react-hook-form';
 import Card from 'react-bootstrap/Card';
+import { LoginCard } from './component/LoginCard';
+import { Header } from './component/Header';
+import { Footer } from './component/Footer';
 
-type FormValues = {
-  username: string;
-  password: string;
-};
 
-const resolver: Resolver<FormValues> = async (values) => {
-  return {
-    values: values.username ? values : {},
-    errors: !values.username
-      ? {
-          username: {
-            type: 'required',
-            message: 'Enter Username.',
-          },
-        }
-      : {},
-  };
-};
+
 
 export default function App() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver });
-  const onSubmit = handleSubmit((data) => console.log(data));
-
   return (
-    <Card className="text-center">
-      <Card.Header as="h5">Login</Card.Header>
-      <Card.Body>
-        <form onSubmit={onSubmit}>
-          <input {...register("username")} placeholder="Username" />
-          {errors?.username && <p>{errors.username.message}</p>}
-          <br></br>
-
-          <input {...register("password")} placeholder="Password" />
-          <br></br>
-
-          <Button variant="primary" type="submit">LOGIN</Button>
-        </form>
-        </Card.Body>
-    </Card>
+    <div>
+      <Header></Header>
+      <LoginCard></LoginCard>
+      <Footer></Footer>
+    </div>
   );
 }
