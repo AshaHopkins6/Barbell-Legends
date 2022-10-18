@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useForm, Resolver } from 'react-hook-form';
 import Card from 'react-bootstrap/Card';
+import './CSS/Card.css'
 
 
 type FormValues = {

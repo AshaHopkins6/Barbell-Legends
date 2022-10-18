@@ -7,20 +7,17 @@ import LiftingRecordsCard from "../component/LiftingRecordsCard";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Tilt from 'react-parallax-tilt';
+import { Timeline } from "../component/Timeline";
 
 
-export default function Home() {
+
+
+export default function Calendar() {
     
     return (
         <div>
             <Header/>
-            <Row>
-                <Col><Tilt><CalendarCard/></Tilt></Col>
-                <Col><Tilt><ExerciseCard/></Tilt></Col>
-                <Col><Tilt><LiftingRecordsCard/></Tilt></Col>
-            </Row>
-            
+                <Timeline/>
             <Footer/>
         </div>    
       

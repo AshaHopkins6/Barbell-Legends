@@ -1,9 +1,14 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from "react-router-dom";
 
 export default function CalendarCard() {
-    return (
-    <Card>
+  const navigate = useNavigate();
+   function calendar(){
+      navigate('/Calendar')
+   }   
+  return (
+    <Card onClick={calendar}>
       <Card.Header as="h5">Upcoming Events</Card.Header>
       <Card.Body className="bg-dark">
         <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
