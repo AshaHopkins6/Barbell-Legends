@@ -13,7 +13,7 @@ export const Header = () => {
    } 
    return (
      <header>
-      <div className="collapse bg-dark" id="navbarHeader">
+      <div className="collapse bg-dark sticky-md-top" id="navbarHeader">
        <div className="container">
         <div className="row">
          <div className="col-sm-8 col-md-7 py-4">

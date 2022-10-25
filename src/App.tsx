@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Calendar from './pages/Calendar';
+import ExercisePage from './pages/ExercisePage';
 
 
 
@@ -24,6 +25,7 @@ export default function App() {
           <Route path= "/" element={<Home/>} />
           <Route path= "login" element={<Login/>} />
           <Route path= "calendar" element={<Calendar/>} />
+          <Route path= "exercise" element={<ExercisePage/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,9 +1,14 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from "react-router-dom";
 
 export default function ExerciseCard() {
-    return (
-    <Card>
+  const navigate = useNavigate();
+   function exercise(){
+      navigate('/exercise')
+   }     
+  return (
+    <Card onClick={exercise}>
       <Card.Header as="h5">Exercises</Card.Header>
       <Card.Body className="bg-dark">
       <svg width="211" height="134" viewBox="0 0 211 134" fill="none" xmlns="http://www.w3.org/2000/svg">

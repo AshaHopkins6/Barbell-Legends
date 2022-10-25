@@ -1,3 +1,5 @@
-.Card{
-    width: 10px;
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }

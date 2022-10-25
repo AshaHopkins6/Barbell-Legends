@@ -12,6 +12,11 @@ export default function NavMenu() {
    function home(){
     navigate('/')    
    }
+
+   function exercise(){
+    navigate('/exercise')    
+   }
+
     return (
     <Dropdown>
       <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
@@ -21,7 +26,7 @@ export default function NavMenu() {
       <Dropdown.Menu>
         <Dropdown.Item onClick={home} href="#/action-1">Home</Dropdown.Item>
         <Dropdown.Item onClick={calendar} href="#/action-2">Calendar</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Exercises</Dropdown.Item>
+        <Dropdown.Item onClick={exercise} href="#/action-3">Exercises</Dropdown.Item>
         <Dropdown.Item href="#/action-4">Lifting Records</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

@@ -6,7 +6,8 @@ import Card from 'react-bootstrap/Card';
 import { Logo } from './Logo';
 import { Col, Row } from 'react-bootstrap';
 import logo from '../images/Logo.png'
-//import './CSS/Footer.css'
+
+
 
 
 

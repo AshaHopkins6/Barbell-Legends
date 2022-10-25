@@ -8,6 +8,9 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Tilt from 'react-parallax-tilt';
+import { Exercise } from "../component/Exercise";
+import GetData from "../component/GetData";
+
 
 
 export default function Home() {
@@ -20,7 +23,6 @@ export default function Home() {
                 <Col><Tilt><ExerciseCard/></Tilt></Col>
                 <Col><Tilt><LiftingRecordsCard/></Tilt></Col>
             </Row>
-            
             <Footer/>
         </div>    
       
